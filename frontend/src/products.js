@@ -1,4 +1,3 @@
-// !!! Im not adding _id code should i be its in video right after logo and custom boostrap
 const products = [
   {
     _id: 1,
