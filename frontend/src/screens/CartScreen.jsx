@@ -18,8 +18,8 @@ const CartScreen = () => {
         dispatch(addToCart({...product, qty}))
     }
 
-    const removeFromCartHandler = async (id) => {
-        dispatch(removeFromCart(id))
+    const removeFromCartHandler = async (_id) => {
+        dispatch(removeFromCart(_id))
     }
 
     const checkoutHandler = () => {
@@ -38,13 +38,13 @@ const CartScreen = () => {
             ) : (
                 <ListGroup variant='flush'>
                     { cartItems.map((item) => (
-                        <ListGroup.Item key={ item.id}>
+                        <ListGroup.Item key={ item._id}>
                             <Row>
                                 <Col md={2}>
                                     <Image src={ item.image } alt={item.name} fluid rounded />
                                 </Col>
                                 <Col md={3}>
-                                    <Link to={ `/product/${item.id}`}>{item.name}</Link>
+                                    <Link to={ `/product/${item._id}`}>{item.name}</Link>
                                 </Col>
                                 <Col md={2}>${item.price}</Col>
                                 <Col md={2}>
@@ -60,7 +60,7 @@ const CartScreen = () => {
                                 </Form.Control>
                                 </Col>
                                 <Col md={2}>
-                                <Button type='button' variant='light' onClick={() => removeFromCartHandler(item.id)}>
+                                <Button type='button' variant='light' onClick={() => removeFromCartHandler(item._id)}>
                                     <FaTrash/>
                                 </Button>
                                 </Col>
