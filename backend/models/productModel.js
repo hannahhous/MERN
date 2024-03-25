@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
-const reviewSchema = mongoose.Schema({
+
+// Afdded new keyword right here !!!
+const reviewSchema = new mongoose.Schema({
     user: {type: mongoose.Schema.Types.ObjectId, required: true, ref: "User"},
     name: {type: String, required: true},
     rating: {type: Number, required: true},

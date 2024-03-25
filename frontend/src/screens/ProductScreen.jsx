@@ -26,7 +26,6 @@ const ProductScreen = () => {
 
     const { data: product, isLoading, error } = useGetProductDetailsQuery(productId);
     const addToCartHandler = () => {
-        console.log("hello")
         // I think it orks cuz of this line after like this is what proves it !!!
         console.log(localStorage.cart)
         dispatch(addToCart({ ...product, qty}));
