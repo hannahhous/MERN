@@ -5,8 +5,7 @@ import Product from "../models/productModel.js";
 // @route   GET /api/products
 // @access  Public
 const getProducts = asyncHandler(async (req, res) => {
-    // !!! Can cange page size here for pagination
-    const pageSize = 8;
+    const pageSize = process.env.PAGINATION_LIMIT;
     const page = Number(req.query.pageNumber) || 1;
 
     const keyword = req.query.keyword ? {
